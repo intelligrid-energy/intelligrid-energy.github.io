@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Product Details | IntelliGrid Energy Dynamic</title>
+<meta name="description" id="pageDesc" content="Product details from the IntelliGrid Energy Dynamic product catalogue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .gallery-main { aspect-ratio: 4/3; border-radius: var(--radius-lg); overflow:hidden; background:var(--surface-alt); border:1px dashed var(--border); display:flex; align-items:center; justify-content:center; color:var(--grey-500); margin-bottom:14px; }
+  .gallery-thumbs { display:flex; gap:10px; flex-wrap:wrap; }
+  .gallery-thumbs .thumb { width:64px; height:64px; border-radius:8px; background:var(--surface-alt); border:1px dashed var(--border); display:flex; align-items:center; justify-content:center; font-size:0.65rem; color:var(--grey-500); overflow:hidden; }
+  .specs-table { width:100%; border-collapse:collapse; margin-top:12px; }
+  .specs-table td { padding:10px 14px; border:1px solid var(--border); font-size:0.9rem; }
+  .specs-table td:first-child { font-weight:600; width:40%; background:var(--surface-alt); }
+  .faq-item { border-bottom:1px solid var(--border); padding:14px 0; }
+  .faq-item summary { cursor:pointer; font-weight:600; }
+  .price-row { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:16px 0; }
+  .price-row .price { font-family: var(--font-head); font-size:1.6rem; font-weight:800; color: var(--text); }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">IG</span>
+      <span class="brand-text">
+        <div class="name">IntelliGrid Energy Dynamic</div>
+        <div class="sub">Dept. of Electrical Engineering · NIT Rourkela</div>
+      </span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <button aria-haspopup="true">Research <span aria-hidden="true">▾</span></button>
+        <div class="dropdown">
+          <a href="research-areas.html">Research Areas</a>
+          <a href="team.html">Research Team</a>
+          <a href="facilities.html">Facilities &amp; Instruments</a>
+          <a href="projects.html">Research Projects</a>
+          <a href="publications.html">Publications</a>
+        </div>
+      </li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle light/dark mode" aria-label="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36 6.36-.71-.71M6.34 6.34l-.71-.71m12.02 0-.71.71M6.34 17.66l-.71.71M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
+      </button>
+      <a href="contact.html" class="btn btn-primary btn-sm">Contact Lab</a>
+      <button class="mobile-toggle" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index.html">Home</a><span class="sep">/</span><a href="products.html">Products</a><span class="sep">/</span><span class="current" id="breadcrumbName">Product</span>
+  </div>
+</div>
+
+<main id="main">
+  <section id="notFoundSection" style="display:none;">
+    <div class="container text-center">
+      <h2>Product not found</h2>
+      <p>The product you're looking for doesn't exist or may have been removed.</p>
+      <a href="products.html" class="btn btn-primary">Back to Catalogue</a>
+    </div>
+  </section>
+
+  <section id="productSection">
+    <div class="container">
+      <div class="grid grid-2" style="gap:48px; align-items:start;">
+        <div>
+          <div class="gallery-main" id="galleryMain">Product image pending</div>
+          <div class="gallery-thumbs" id="galleryThumbs"></div>
+        </div>
+        <div>
+          <span class="tag" id="prodCategory"></span>
+          <h1 id="prodName" style="margin-top:10px;"></h1>
+          <p class="small" id="prodId"></p>
+          <p id="prodShortDesc"></p>
+          <div class="price-row">
+            <span class="price" id="prodPrice"></span>
+            <span id="prodAvailability"></span>
+          </div>
+          <div class="flex gap-10 wrap">
+            <button class="btn btn-whatsapp" id="buyNowBtn">Buy Now</button>
+            <a href="#" class="btn btn-outline" id="enquireWhatsapp">Enquire on WhatsApp</a>
+            <a href="#" class="btn btn-outline" id="datasheetLink" style="display:none;">Download Datasheet</a>
+          </div>
+          <div class="placeholder-note" id="priceNote" style="margin-top:14px;">Price shown is indicative and subject to confirmation. This is a WhatsApp enquiry workflow, not an automated checkout — no payment is collected here.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid grid-2" style="gap:48px; align-items:start;">
+        <div>
+          <h2>Description</h2>
+          <p id="prodDescription"></p>
+          <h2 style="margin-top:28px;">Features</h2>
+          <ul id="prodFeatures" style="color:var(--text-muted); line-height:1.9; padding-left:20px;"></ul>
+          <h2 style="margin-top:28px;">Applications</h2>
+          <ul id="prodApplications" style="color:var(--text-muted); line-height:1.9; padding-left:20px;"></ul>
+        </div>
+        <div>
+          <h2>Technical Specifications</h2>
+          <table class="specs-table" id="specsTable"></table>
+          <h2 style="margin-top:28px;">Frequently Asked Questions</h2>
+          <div id="faqList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--surface-alt);" id="relatedSection">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center;">You Might Also Like</div>
+        <h2>Related Products</h2>
+      </div>
+      <div class="grid grid-3" id="relatedGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark">IG</span>
+          <span class="brand-text"><div class="name" style="color:#fff;">IntelliGrid Energy Dynamic</div></span>
+        </div>
+        <p style="font-size:0.88rem;">Department of Electrical Engineering, National Institute of Technology Rourkela, Rourkela, Odisha, India.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About the Lab</a></li>
+          <li><a href="team.html">Research Team</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Research Areas</h4>
+        <ul>
+          <li><a href="research-areas.html">Smart Grid Technologies</a></li>
+          <li><a href="research-areas.html">Power Electronics</a></li>
+          <li><a href="research-areas.html">Renewable Integration</a></li>
+          <li><a href="research-areas.html">Energy Storage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html">Product Catalogue</a></li>
+          <li><a href="products.html">Request a Quote</a></li>
+          <li><a href="#" data-whatsapp-general="Hello IntelliGrid Energy Dynamic Laboratory, I would like to enquire about your products.">WhatsApp Enquiry</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Dept. of Electrical Engineering</li>
+          <li>NIT Rourkela, Odisha, India</li>
+          <li>[Official Email Address]</li>
+          <li><a href="contact.html">Full contact details →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; <span id="year"></span> IntelliGrid Energy Dynamic, Dept. of Electrical Engineering, NIT Rourkela. All rights reserved.</div>
+      <div class="flex gap-10"><a href="privacy.html">Privacy Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+<a href="#" class="floating-whatsapp" data-whatsapp-general="Hello IntelliGrid Energy Dynamic Laboratory, I would like to enquire about your research/products." aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.7 0-8.51 3.79-8.51 8.47a8.36 8.36 0 0 0 1.14 4.24L3.5 21l4.42-1.15a8.6 8.6 0 0 0 4.12 1.05h.01c4.7 0 8.51-3.79 8.51-8.47a8.35 8.35 0 0 0-2.96-6.11Z"/></svg>
+</a>
+
+<!-- WhatsApp Enquiry Modal (shared) -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal-box">
+    <button class="modal-close" data-close-modal aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h3>Product Enquiry</h3>
+    <p class="small">Review the details below, fill in your information, and we'll open WhatsApp with a pre-filled message. You'll still need to press Send.</p>
+    <div class="modal-product-preview">
+      <div class="p-image"></div>
+      <div>
+        <div class="p-name" style="font-weight:700;"></div>
+        <div class="p-meta small"></div>
+      </div>
+    </div>
+    <form id="enquiryForm" novalidate>
+      <div class="form-field">
+        <label>Full Name <span class="req">*</span></label>
+        <input type="text" name="customerName" required>
+        <div class="form-error">Please enter your name.</div>
+      </div>
+      <div class="form-field">
+        <label>Institution / Organization</label>
+        <input type="text" name="institution">
+      </div>
+      <div class="form-field">
+        <label>Quantity <span class="req">*</span></label>
+        <input type="number" name="quantity" min="1" value="1" required>
+        <div class="form-error">Please enter a quantity.</div>
+      </div>
+      <div class="form-field">
+        <label>Email Address <span class="req">*</span></label>
+        <input type="email" name="email" required>
+        <div class="form-error">Please enter a valid email.</div>
+      </div>
+      <div class="form-field">
+        <label>Additional Requirements</label>
+        <textarea name="message" placeholder="Any specific requirements, delivery location, etc."></textarea>
+      </div>
+      <p class="form-note">By submitting, a WhatsApp chat will open with your enquiry pre-filled to +91 94333 79717. We do not collect payment information here — your enquiry is only sent once you press Send in WhatsApp. See our <a href="privacy.html">Privacy Policy</a>.</p>
+      <button type="submit" class="btn btn-whatsapp btn-block">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4c-4.7 0-8.51 3.79-8.51 8.47a8.36 8.36 0 0 0 1.14 4.24L3.5 21l4.42-1.15a8.6 8.6 0 0 0 4.12 1.05h.01c4.7 0 8.51-3.79 8.51-8.47a8.35 8.35 0 0 0-2.96-6.11Z"/></svg>
+        Continue to WhatsApp
+      </button>
+      <div id="enquiryConfirm" class="placeholder-note" style="display:none; margin-top:14px;">
+        WhatsApp should now be opening in a new tab with your enquiry pre-filled. Please review and press <strong>Send</strong> there to complete your enquiry.
+        <br><a id="enquiryFallbackLink" href="#" target="_blank" style="display:none; margin-top:8px;" class="btn btn-whatsapp btn-sm">Open WhatsApp manually</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../data/content.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.querySelector("#year").textContent = new Date().getFullYear();
+
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+  const product = SITE_DATA.products.find(p => p.id === productId);
+
+  if (!product) {
+    document.querySelector("#productSection").style.display = "none";
+    document.querySelector("#relatedSection").style.display = "none";
+    document.querySelector("#notFoundSection").style.display = "block";
+  } else {
+    document.querySelector("#pageTitle").textContent = `${product.name} | IntelliGrid Energy Dynamic`;
+    document.querySelector("#pageDesc").setAttribute("content", product.shortDesc);
+    document.querySelector("#breadcrumbName").textContent = product.name;
+    document.querySelector("#prodCategory").textContent = product.category;
+    document.querySelector("#prodName").textContent = product.name;
+    document.querySelector("#prodId").textContent = `Product ID: ${product.id}`;
+    document.querySelector("#prodShortDesc").textContent = product.shortDesc;
+    document.querySelector("#prodPrice").textContent = product.price || "Request a Quote";
+    document.querySelector("#prodAvailability").innerHTML = product.availability === "In Stock"
+      ? `<span class="badge badge-instock">${product.availability}</span>`
+      : `<span class="badge badge-quote">${product.availability || "Request a Quote"}</span>`;
+    document.querySelector("#prodDescription").textContent = product.description;
+
+    document.querySelector("#galleryMain").innerHTML = product.image ? `<img src="${product.image}" alt="${product.name}">` : "Product image pending";
+    const gallery = (product.gallery && product.gallery.length) ? product.gallery : (product.image ? [product.image] : []);
+    document.querySelector("#galleryThumbs").innerHTML = gallery.map(g => `<div class="thumb"><img src="${g}" alt="${product.name}"></div>`).join("") || `<div class="thumb">No gallery images yet</div>`;
+
+    document.querySelector("#prodFeatures").innerHTML = (product.features || []).map(f => `<li>${f}</li>`).join("") || "<li>[Features — to be added]</li>";
+    document.querySelector("#prodApplications").innerHTML = (product.applications || []).map(a => `<li>${a}</li>`).join("") || "<li>[Applications — to be added]</li>";
+
+    const specs = product.specs || {};
+    const specsHtml = Object.keys(specs).length
+      ? Object.entries(specs).map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("")
+      : `<tr><td colspan="2">Specifications not yet available</td></tr>`;
+    document.querySelector("#specsTable").innerHTML = specsHtml;
+
+    const faqs = product.faqs || [];
+    document.querySelector("#faqList").innerHTML = faqs.length
+      ? faqs.map(f => `<details class="faq-item"><summary>${f.q}</summary><p class="small" style="margin-top:8px;">${f.a}</p></details>`).join("")
+      : `<p class="small">No FAQs listed for this product yet — feel free to ask us directly via WhatsApp or the Contact page.</p>`;
+
+    if (product.datasheetUrl) {
+      const link = document.querySelector("#datasheetLink");
+      link.href = product.datasheetUrl;
+      link.style.display = "inline-flex";
+    }
+
+    document.querySelector("#buyNowBtn").addEventListener("click", () => openEnquiryModal(product));
+
+    const enquireLink = document.querySelector("#enquireWhatsapp");
+    const enquireText = `Hello IntelliGrid Energy Dynamic Laboratory, I would like to enquire about ${product.name} (Product ID: ${product.id}).`;
+    enquireLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(enquireText)}`;
+    enquireLink.target = "_blank";
+    enquireLink.rel = "noopener";
+
+    // Related products: same category, excluding current
+    const related = SITE_DATA.products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3);
+    const fallback = related.length ? related : SITE_DATA.products.filter(p => p.id !== product.id).slice(0, 3);
+    document.querySelector("#relatedGrid").innerHTML = fallback.map(p => `
+      <div class="card reveal-on-scroll">
+        <div class="person-photo" style="aspect-ratio:4/3;">${p.image ? `<img src="${p.image}" alt="${p.name}">` : "Product image pending"}</div>
+        <span class="tag">${p.category}</span>
+        <h3>${p.name}</h3>
+        <p>${p.shortDesc}</p>
+        <a href="product-detail.html?id=${p.id}" class="btn btn-outline btn-sm">View Details</a>
+      </div>
+    `).join("");
+    initReveal();
+  }
+</script>
+</body>
+</html>

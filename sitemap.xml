@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://[your-domain]/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://[your-domain]/pages/about.html</loc><priority>0.9</priority></url>
+  <url><loc>https://[your-domain]/pages/research-areas.html</loc><priority>0.9</priority></url>
+  <url><loc>https://[your-domain]/pages/team.html</loc><priority>0.8</priority></url>
+  <url><loc>https://[your-domain]/pages/facilities.html</loc><priority>0.8</priority></url>
+  <url><loc>https://[your-domain]/pages/projects.html</loc><priority>0.8</priority></url>
+  <url><loc>https://[your-domain]/pages/publications.html</loc><priority>0.8</priority></url>
+  <url><loc>https://[your-domain]/pages/products.html</loc><priority>0.9</priority></url>
+  <url><loc>https://[your-domain]/pages/news.html</loc><priority>0.7</priority></url>
+  <url><loc>https://[your-domain]/pages/gallery.html</loc><priority>0.6</priority></url>
+  <url><loc>https://[your-domain]/pages/contact.html</loc><priority>0.7</priority></url>
+  <url><loc>https://[your-domain]/pages/privacy.html</loc><priority>0.3</priority></url>
+</urlset>
