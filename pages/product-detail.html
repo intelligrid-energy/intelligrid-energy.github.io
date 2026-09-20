@@ -7,6 +7,7 @@
 <meta name="description" id="pageDesc" content="Product details from the IntelliGrid Energy Dynamic product catalogue.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../images/logo.svg">
 <link rel="stylesheet" href="../css/style.css">
 <style>
   .gallery-main { aspect-ratio: 4/3; border-radius: var(--radius-lg); overflow:hidden; background:var(--surface-alt); border:1px dashed var(--border); display:flex; align-items:center; justify-content:center; color:var(--grey-500); margin-bottom:14px; }
@@ -27,7 +28,7 @@
 <header class="site-header">
   <div class="nav-wrap">
     <a href="../index.html" class="brand">
-      <span class="brand-mark">IG</span>
+      <img src="../images/logo.svg" alt="IntelliGrid Energy Dynamic logo" class="brand-mark" style="border-radius:10px;">
       <span class="brand-text">
         <div class="name">IntelliGrid Energy Dynamic</div>
         <div class="sub">Dept. of Electrical Engineering · NIT Rourkela</div>
@@ -140,7 +141,7 @@
     <div class="footer-grid">
       <div class="footer-col">
         <div class="brand" style="margin-bottom:14px;">
-          <span class="brand-mark">IG</span>
+          <img src="../images/logo.svg" alt="IntelliGrid Energy Dynamic logo" class="brand-mark" style="border-radius:10px;">
           <span class="brand-text"><div class="name" style="color:#fff;">IntelliGrid Energy Dynamic</div></span>
         </div>
         <p style="font-size:0.88rem;">Department of Electrical Engineering, National Institute of Technology Rourkela, Rourkela, Odisha, India.</p>
@@ -175,7 +176,7 @@
         <h4>Contact</h4>
         <ul>
           <li>Dept. of Electrical Engineering</li>
-          <li>NIT Rourkela, Odisha, India</li>
+          <li>SPEI Lab, Room EE-111, NIT Rourkela</li>
           <li>[Official Email Address]</li>
           <li><a href="contact.html">Full contact details →</a></li>
         </ul>
@@ -183,7 +184,7 @@
     </div>
     <div class="footer-bottom">
       <div>&copy; <span id="year"></span> IntelliGrid Energy Dynamic, Dept. of Electrical Engineering, NIT Rourkela. All rights reserved.</div>
-      <div class="flex gap-10"><a href="privacy.html">Privacy Policy</a></div>
+      <div class="flex gap-10"><a href="privacy.html">Privacy Policy</a><span style="opacity:.4;">|</span><span>Website by <a href="https://devsoftt.in" target="_blank" rel="noopener">DevSoftt Developers</a></span></div>
     </div>
   </div>
 </footer>
@@ -274,9 +275,9 @@
       : `<span class="badge badge-quote">${product.availability || "Request a Quote"}</span>`;
     document.querySelector("#prodDescription").textContent = product.description;
 
-    document.querySelector("#galleryMain").innerHTML = product.image ? `<img src="${product.image}" alt="${product.name}">` : "Product image pending";
+    document.querySelector("#galleryMain").innerHTML = product.image ? `<img src="${ASSET_PREFIX}${product.image}" alt="${product.name}">` : "Product image pending";
     const gallery = (product.gallery && product.gallery.length) ? product.gallery : (product.image ? [product.image] : []);
-    document.querySelector("#galleryThumbs").innerHTML = gallery.map(g => `<div class="thumb"><img src="${g}" alt="${product.name}"></div>`).join("") || `<div class="thumb">No gallery images yet</div>`;
+    document.querySelector("#galleryThumbs").innerHTML = gallery.map(g => `<div class="thumb"><img src="${ASSET_PREFIX}${g}" alt="${product.name}"></div>`).join("") || `<div class="thumb">No gallery images yet</div>`;
 
     document.querySelector("#prodFeatures").innerHTML = (product.features || []).map(f => `<li>${f}</li>`).join("") || "<li>[Features — to be added]</li>";
     document.querySelector("#prodApplications").innerHTML = (product.applications || []).map(a => `<li>${a}</li>`).join("") || "<li>[Applications — to be added]</li>";
@@ -311,7 +312,7 @@
     const fallback = related.length ? related : SITE_DATA.products.filter(p => p.id !== product.id).slice(0, 3);
     document.querySelector("#relatedGrid").innerHTML = fallback.map(p => `
       <div class="card reveal-on-scroll">
-        <div class="person-photo" style="aspect-ratio:4/3;">${p.image ? `<img src="${p.image}" alt="${p.name}">` : "Product image pending"}</div>
+        <div class="person-photo" style="aspect-ratio:4/3;">${p.image ? `<img src="${ASSET_PREFIX}${p.image}" alt="${p.name}">` : "Product image pending"}</div>
         <span class="tag">${p.category}</span>
         <h3>${p.name}</h3>
         <p>${p.shortDesc}</p>

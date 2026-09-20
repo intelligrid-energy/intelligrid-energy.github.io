@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
 <header class="site-header">
   <div class="nav-wrap">
     <a href="index.html" class="brand">
-      <span class="brand-mark">IG</span>
+      <img src="images/logo.svg" alt="IntelliGrid Energy Dynamic logo" class="brand-mark" style="border-radius:10px;">
       <span class="brand-text">
         <div class="name">IntelliGrid Energy Dynamic</div>
         <div class="sub">Dept. of Electrical Engineering · NIT Rourkela</div>
@@ -228,7 +229,7 @@
     <div class="footer-grid">
       <div class="footer-col">
         <div class="brand" style="margin-bottom:14px;">
-          <span class="brand-mark">IG</span>
+          <img src="images/logo.svg" alt="IntelliGrid Energy Dynamic logo" class="brand-mark" style="border-radius:10px;">
           <span class="brand-text"><div class="name" style="color:#fff;">IntelliGrid Energy Dynamic</div></span>
         </div>
         <p style="font-size:0.88rem;">Department of Electrical Engineering, National Institute of Technology Rourkela, Rourkela, Odisha, India.</p>
@@ -263,7 +264,7 @@
         <h4>Contact</h4>
         <ul>
           <li>Dept. of Electrical Engineering</li>
-          <li>NIT Rourkela, Odisha, India</li>
+          <li>SPEI Lab, Room EE-111, NIT Rourkela</li>
           <li>[Official Email Address]</li>
           <li><a href="pages/contact.html">Full contact details →</a></li>
         </ul>
@@ -271,7 +272,7 @@
     </div>
     <div class="footer-bottom">
       <div>&copy; <span id="year"></span> IntelliGrid Energy Dynamic, Dept. of Electrical Engineering, NIT Rourkela. All rights reserved.</div>
-      <div class="flex gap-10"><a href="pages/privacy.html">Privacy Policy</a></div>
+      <div class="flex gap-10"><a href="pages/privacy.html">Privacy Policy</a><span style="opacity:.4;">|</span><span>Website by <a href="https://devsoftt.in" target="_blank" rel="noopener">DevSoftt Developers</a></span></div>
     </div>
   </div>
 </footer>
@@ -313,7 +314,7 @@
     const people = [SITE_DATA.director, ...SITE_DATA.team.phd.slice(0,3)];
     grid.innerHTML = people.map(p => `
       <div class="card person-card reveal-on-scroll">
-        <div class="person-photo">${p.photo ? `<img src="${p.photo}" alt="${p.name}">` : "Photograph pending"}</div>
+        <div class="person-photo">${p.photo ? `<img src="${ASSET_PREFIX}${p.photo}" alt="${p.name}">` : "Photograph pending"}</div>
         <div class="person-name">${p.name}</div>
         <div class="person-role">${p.designation || p.role}</div>
         <a href="pages/team.html" class="small">View Profile →</a>
@@ -339,7 +340,7 @@
     const featured = SITE_DATA.products.filter(p => p.featured).slice(0, 3);
     grid.innerHTML = featured.map(p => `
       <div class="card reveal-on-scroll">
-        <div class="person-photo" style="aspect-ratio:4/3;">${p.image ? `<img src="${p.image}" alt="${p.name}">` : "Product image pending"}</div>
+        <div class="person-photo" style="aspect-ratio:4/3;">${p.image ? `<img src="${ASSET_PREFIX}${p.image}" alt="${p.name}">` : "Product image pending"}</div>
         <span class="tag">${p.category}</span>
         <h3>${p.name}</h3>
         <p>${p.shortDesc}</p>
@@ -355,7 +356,7 @@
     const grid = document.querySelector("#facilitiesPreviewGrid");
     grid.innerHTML = SITE_DATA.facilities.map(f => `
       <div class="card reveal-on-scroll">
-        <div class="person-photo" style="aspect-ratio:4/3;">${f.image ? `<img src="${f.image}" alt="${f.name}">` : "Instrument photo pending"}</div>
+        <div class="person-photo" style="aspect-ratio:4/3;">${f.image ? `<img src="${ASSET_PREFIX}${f.image}" alt="${f.name}">` : "Instrument photo pending"}</div>
         <span class="tag">${f.category}</span>
         <h3>${f.name}</h3>
         <p>${f.desc}</p>

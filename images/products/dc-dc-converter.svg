@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1428"/><stop offset="100%" stop-color="#16294a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg3)"/>
+  <!-- PCB board -->
+  <rect x="90" y="70" width="220" height="150" rx="6" fill="#0f1e38" stroke="#2dd4bf" stroke-width="2.5"/>
+  <!-- inductor -->
+  <circle cx="150" cy="150" r="26" fill="none" stroke="#3b82f6" stroke-width="5"/>
+  <circle cx="150" cy="150" r="14" fill="none" stroke="#5eead4" stroke-width="3"/>
+  <!-- capacitors -->
+  <rect x="210" y="120" width="18" height="60" rx="3" fill="none" stroke="#2dd4bf" stroke-width="3"/>
+  <rect x="240" y="120" width="18" height="60" rx="3" fill="none" stroke="#2dd4bf" stroke-width="3"/>
+  <!-- traces -->
+  <g stroke="#5eead4" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M100 100 h30 M100 190 h30 M280 100 h20 M280 190 h20"/>
+    <path d="M176 150 h24 M258 150 h30"/>
+  </g>
+  <circle cx="100" cy="100" r="4" fill="#2dd4bf"/>
+  <circle cx="100" cy="190" r="4" fill="#2dd4bf"/>
+  <circle cx="300" cy="100" r="4" fill="#3b82f6"/>
+  <circle cx="300" cy="190" r="4" fill="#3b82f6"/>
+</svg>

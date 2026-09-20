@@ -4,6 +4,11 @@
 
 const WHATSAPP_NUMBER = "919433379717"; // +91 94333 79717
 
+// Image paths in data/content.js are stored root-relative (e.g. "images/logo.svg").
+// Pages inside /pages/ need a "../" prefix to reach them; the homepage doesn't.
+// Use `${ASSET_PREFIX}${path}` whenever rendering an image src from SITE_DATA.
+const ASSET_PREFIX = window.location.pathname.includes("/pages/") ? "../" : "";
+
 /* ---------- Mobile nav + dropdowns ---------- */
 function initNav() {
   const toggle = document.querySelector(".mobile-toggle");

@@ -15,16 +15,23 @@ window.SITE_DATA = {
     tagline: "Intelligent Energy Systems. Smarter Grids. Sustainable Future.",
     department: "Department of Electrical Engineering",
     institute: "National Institute of Technology Rourkela",
-    address: "Department of Electrical Engineering, NIT Rourkela, Rourkela, Odisha, 769008, India",
+    address: "SPEI Laboratory (Room EE-111), Department of Electrical Engineering, NIT Rourkela, Rourkela, Odisha, 769008, India",
     email: "[Official Email Address]",
     phone: "[Official Telephone Number]",
     whatsapp: "+91 94333 79717",
     mapEmbedUrl: "" // [Add verified Google Maps embed URL for the department building]
   },
 
+  // Physical laboratory space that IntelliGrid Energy Dynamic operates from.
+  physicalLab: {
+    nameEn: "Sustainable Power and Energy Innovation (SPEI) Laboratory",
+    nameHi: "सतत शक्ति और ऊर्जा नवाचार (एसपीईआई) प्रयोगशाला",
+    room: "EE-111"
+  },
+
   director: {
     name: "Dr. Arnab Ghosh",
-    designation: "Professor Grade 1",
+    designation: "Assistant Professor Grade 1",
     department: "Department of Electrical Engineering",
     institute: "National Institute of Technology Rourkela",
     photo: "",
@@ -79,7 +86,7 @@ window.SITE_DATA = {
     {
       id: "PROD-001", name: "[Smart Grid Monitoring Unit]", category: "Smart Grid Solutions",
       price: "", availability: "Request a Quote", featured: true, dateAdded: "2026-01-01",
-      image: "", gallery: [],
+      image: "images/products/smart-grid-monitor.svg", gallery: [],
       shortDesc: "[Short product description — one or two lines]",
       description: "[Detailed product description — to be supplied. Describe what the unit does, how it is used, and what problem it solves.]",
       specs: { "Input Voltage": "[Value]", "Communication": "[Protocol]", "Accuracy": "[Value]", "Enclosure": "[Rating]" },
@@ -91,7 +98,7 @@ window.SITE_DATA = {
     {
       id: "PROD-002", name: "[Smart Energy Monitor]", category: "Energy Monitoring Systems",
       price: "", availability: "Request a Quote", featured: true, dateAdded: "2026-01-05",
-      image: "", gallery: [],
+      image: "images/products/smart-energy-monitor.svg", gallery: [],
       shortDesc: "[Short product description — one or two lines]",
       description: "[Detailed product description — to be supplied.]",
       specs: { "Measurement Channels": "[Value]", "Sampling Rate": "[Value]", "Connectivity": "[Wi-Fi / Ethernet / etc.]", "Power Supply": "[Value]" },
@@ -103,7 +110,7 @@ window.SITE_DATA = {
     {
       id: "PROD-003", name: "[DC-DC Converter Module]", category: "Power Electronics Converters",
       price: "", availability: "Request a Quote", featured: true, dateAdded: "2026-01-10",
-      image: "", gallery: [],
+      image: "images/products/dc-dc-converter.svg", gallery: [],
       shortDesc: "[Short product description — one or two lines]",
       description: "[Detailed product description — to be supplied.]",
       specs: { "Input Range": "[Value]", "Output Power": "[Value]", "Efficiency": "[Value]", "Topology": "[Value]" },
@@ -115,7 +122,7 @@ window.SITE_DATA = {
     {
       id: "PROD-004", name: "[Embedded Controller Board]", category: "Embedded Control Systems",
       price: "", availability: "Request a Quote", featured: false, dateAdded: "2025-12-20",
-      image: "", gallery: [],
+      image: "images/products/embedded-controller.svg", gallery: [],
       shortDesc: "[Short product description — one or two lines]",
       description: "[Detailed product description — to be supplied.]",
       specs: { "Processor": "[Value]", "I/O Channels": "[Value]", "Interfaces": "[CAN / SPI / UART etc.]" },
@@ -127,7 +134,7 @@ window.SITE_DATA = {
     {
       id: "PROD-005", name: "[Solar MPPT Charge Controller]", category: "Renewable Energy Technologies",
       price: "", availability: "Request a Quote", featured: false, dateAdded: "2025-12-15",
-      image: "", gallery: [],
+      image: "images/products/solar-mppt-controller.svg", gallery: [],
       shortDesc: "[Short product description — one or two lines]",
       description: "[Detailed product description — to be supplied.]",
       specs: { "PV Input": "[Value]", "Tracking Efficiency": "[Value]", "Battery Support": "[Chemistry types]" },
@@ -139,7 +146,7 @@ window.SITE_DATA = {
     {
       id: "PROD-006", name: "[Battery Management Research Prototype]", category: "Research Prototypes",
       price: "", availability: "Request a Quote", featured: false, dateAdded: "2025-11-30",
-      image: "", gallery: [],
+      image: "images/products/battery-bms-prototype.svg", gallery: [],
       shortDesc: "[Short product description — one or two lines]",
       description: "[Detailed product description — to be supplied.]",
       specs: { "Cell Configuration": "[Value]", "Estimation Method": "[Value]", "Interface": "[Value]" },
@@ -151,7 +158,7 @@ window.SITE_DATA = {
     {
       id: "PROD-007", name: "[Power Electronics Experimental Kit]", category: "Educational and Experimental Kits",
       price: "", availability: "Request a Quote", featured: true, dateAdded: "2026-01-12",
-      image: "", gallery: [],
+      image: "images/products/power-electronics-kit.svg", gallery: [],
       shortDesc: "[Short product description — one or two lines]",
       description: "[Detailed product description — to be supplied. Describe the learning objectives and included components.]",
       specs: { "Included Modules": "[List]", "Suitable For": "[UG / PG lab]", "Power Requirement": "[Value]" },
@@ -163,7 +170,7 @@ window.SITE_DATA = {
     {
       id: "PROD-008", name: "[Customized Research Solution]", category: "Customized Research Solutions",
       price: "", availability: "Request a Quote", featured: false, dateAdded: "2025-11-10",
-      image: "", gallery: [],
+      image: "images/products/custom-solution.svg", gallery: [],
       shortDesc: "Custom-engineered solutions developed on enquiry for specific research or industrial requirements.",
       description: "The laboratory undertakes customized development for specific research, testing, or industrial requirements. Please contact us with your requirements for a tailored proposal.",
       specs: {},
