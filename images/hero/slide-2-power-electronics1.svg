@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="hs2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1e38"/><stop offset="100%" stop-color="#0a1428"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#hs2)"/>
+  <g opacity="0.15" stroke="#3b82f6" stroke-width="1">
+    <circle cx="250" cy="250" r="200" fill="none"/><circle cx="250" cy="250" r="150" fill="none"/><circle cx="250" cy="250" r="100" fill="none"/>
+  </g>
+  <!-- large converter board -->
+  <rect x="140" y="170" width="220" height="160" rx="10" fill="#16294a" stroke="#2dd4bf" stroke-width="2.5"/>
+  <circle cx="210" cy="250" r="34" fill="none" stroke="#3b82f6" stroke-width="6"/>
+  <circle cx="210" cy="250" r="18" fill="none" stroke="#5eead4" stroke-width="3"/>
+  <rect x="280" y="215" width="24" height="70" rx="4" fill="none" stroke="#2dd4bf" stroke-width="3"/>
+  <rect x="315" y="215" width="24" height="70" rx="4" fill="none" stroke="#2dd4bf" stroke-width="3"/>
+  <g stroke="#5eead4" stroke-width="2" opacity="0.7">
+    <path d="M160 200 h30 M160 300 h30 M360 200 h20 M360 300 h20"/>
+  </g>
+  <circle cx="160" cy="200" r="4" fill="#2dd4bf"/><circle cx="160" cy="300" r="4" fill="#2dd4bf"/>
+  <circle cx="380" cy="200" r="4" fill="#3b82f6"/><circle cx="380" cy="300" r="4" fill="#3b82f6"/>
+</svg>
