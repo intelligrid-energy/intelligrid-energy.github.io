@@ -222,6 +222,49 @@ function initFilterChips(containerSelector, itemSelector, dataAttr) {
   });
 }
 
+/* ---------- Hero photo slider (homepage only) ---------- */
+function initHeroSlider() {
+  const slider = document.querySelector("#heroSlider");
+  if (!slider) return;
+  const slides = Array.from(slider.querySelectorAll(".hero-slide"));
+  const dotsWrap = document.querySelector("#heroSliderDots");
+  let index = 0;
+  let timer = null;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function goTo(i) {
+    slides[index].classList.remove("active");
+    dots[index].classList.remove("active");
+    index = (i + slides.length) % slides.length;
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+  }
+
+  function next() { goTo(index + 1); }
+
+  function start() {
+    stop();
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    timer = setInterval(next, 4200);
+  }
+  function stop() { if (timer) clearInterval(timer); }
+
+  slider.querySelector(".hero-slider-nav.next")?.addEventListener("click", () => { next(); start(); });
+  slider.querySelector(".hero-slider-nav.prev")?.addEventListener("click", () => { goTo(index - 1); start(); });
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
+
+  start();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initTheme();
@@ -229,4 +272,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initEnquiryForm();
   initGeneralWhatsAppLinks();
+  initHeroSlider();
 });
